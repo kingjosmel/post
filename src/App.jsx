@@ -8,7 +8,7 @@ const App = () => {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch("http://localhost:3000/");
+      const res = await fetch("https://post-backend-2-kg3j.onrender.com/");
       const data = await res.json();
       setPosts(data.reverse()); // newest first
     } catch (error) {

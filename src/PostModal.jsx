@@ -9,11 +9,14 @@ const PostModal = ({ onClose, onPostCreated }) => {
     if (!author || !content) return alert("All fields are required!");
 
     try {
-      const res = await fetch("http://localhost:3000/create", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ author, content }),
-      });
+      const res = await fetch(
+        "https://post-backend-2-kg3j.onrender.com/create",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ author, content }),
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to create post");
 
